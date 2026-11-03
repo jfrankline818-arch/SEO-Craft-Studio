@@ -28,29 +28,15 @@
     </script>
     <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Subtle dot grid pattern to provide subtle depth to blank ad containers without text labels */
-        .ad-grid-pattern {
-            background-image: radial-gradient(rgba(156, 163, 175, 0.15) 1px, transparent 1px);
-            background-size: 12px 12px;
-        }
-        .dark .ad-grid-pattern {
-            background-image: radial-gradient(rgba(75, 85, 99, 0.25) 1px, transparent 1px);
-        }
-    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
-
-    <!-- GOOGLE ADSENSE MASTER SCRIPT -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4321543724878495" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-4321543724878495">
 
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Brand Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('meta-generator')">
+                <a href="#meta-generator" class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
@@ -58,34 +44,34 @@
                         <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">SEO Craft</span>
                         <span class="text-xs bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200 px-2 py-0.5 rounded-full font-semibold ml-1">Studio</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Desktop Navigation Bar -->
                 <nav class="hidden xl:flex space-x-1">
-                    <button onclick="switchTab('meta-generator')" id="nav-meta-generator" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-gray-700 transition">
+                    <a href="#meta-generator" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-tags mr-1"></i> Meta & OG Tags
-                    </button>
-                    <button onclick="switchTab('keyword-analyzer')" id="nav-keyword-analyzer" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#keyword-analyzer" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-key mr-1"></i> Keyword Density
-                    </button>
-                    <button onclick="switchTab('readability-calculator')" id="nav-readability-calculator" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#readability-calculator" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-book-open mr-1"></i> Readability Grade
-                    </button>
-                    <button onclick="switchTab('url-structure')" id="nav-url-structure" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-                        <i class="fa-solid fa-link mr-1"></i> Slug & Headings
-                    </button>
-                    <button onclick="switchTab('about')" id="nav-about" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#url-structure" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <i class="fa-solid fa-link mr-1"></i> Slug Generator
+                    </a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-circle-info mr-1"></i> About
-                    </button>
-                    <button onclick="switchTab('privacy')" id="nav-privacy" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#privacy" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-shield-halved mr-1"></i> Privacy
-                    </button>
-                    <button onclick="switchTab('terms')" id="nav-terms" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#terms" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-file-contract mr-1"></i> Terms
-                    </button>
-                    <button onclick="switchTab('contact')" id="nav-contact" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    </a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-xs font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition">
                         <i class="fa-solid fa-envelope mr-1"></i> Contact
-                    </button>
+                    </a>
                 </nav>
 
                 <!-- Actions: Dark Mode & Mobile Menu Toggle -->
@@ -102,378 +88,282 @@
 
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden xl:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 pt-2 pb-3 space-y-1">
-            <button onclick="switchTab('meta-generator')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Meta & Open Graph Tags</button>
-            <button onclick="switchTab('keyword-analyzer')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Keyword Density Analyzer</button>
-            <button onclick="switchTab('readability-calculator')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Readability Grade Calculator</button>
-            <button onclick="switchTab('url-structure')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Slug & Heading Extractor</button>
-            <button onclick="switchTab('about')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About Us</button>
-            <button onclick="switchTab('privacy')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Privacy Policy</button>
-            <button onclick="switchTab('terms')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Terms of Service</button>
-            <button onclick="switchTab('contact')" class="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Support</button>
+            <a href="#meta-generator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Meta & Open Graph Tags</a>
+            <a href="#keyword-analyzer" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Keyword Density Analyzer</a>
+            <a href="#readability-calculator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Readability Grade Calculator</a>
+            <a href="#url-structure" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Slug Generator</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About Us</a>
+            <a href="#privacy" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Privacy Policy</a>
+            <a href="#terms" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Terms of Service</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Support</a>
         </div>
     </header>
 
-    <!-- AD SLOT 1: TOP LEADERBOARD BANNER (COMPLETELY BLANK CONTAINER) -->
-    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-6">
-        <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 text-center ad-grid-pattern shadow-sm min-h-[120px] flex items-center justify-center">
-            <div class="w-full flex justify-center items-center min-h-[90px]">
-                <!-- Official AdSense Responsive Leaderboard Tag -->
-                <ins class="adsbygoogle"
-                     style="display:block; width:100%; max-width:728px; height:90px;"
-                     data-ad-client="ca-pub-4321543724878495"
-                     data-ad-slot="1000000001"
-                     data-ad-format="horizontal"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN APP CONTENT LAYOUT -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6 flex-grow w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 flex-grow w-full space-y-10">
 
-            <!-- MAIN WORKSPACE SECTION (8 COLUMNS) -->
-            <div class="lg:col-span-8 space-y-6">
-
-                <!-- TOOL 1: SEO META & OPEN GRAPH GENERATOR -->
-                <section id="tool-meta-generator" class="tab-content bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">SEO Meta Tag & Open Graph Generator</h1>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Generate search-engine-optimized meta tags and social media card previews.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-tags text-xl"></i></span>
-                    </div>
-
-                    <!-- Interactive Inputs -->
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <label class="block text-xs font-semibold uppercase text-gray-500">Page Title</label>
-                                <span id="title-count" class="text-xs text-gray-400 font-mono">0 / 60 chars</span>
-                            </div>
-                            <input type="text" id="meta-title" placeholder="e.g., Ultimate SEO Guide for Content Marketers in 2026" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between items-center mb-1">
-                                <label class="block text-xs font-semibold uppercase text-gray-500">Meta Description</label>
-                                <span id="desc-count" class="text-xs text-gray-400 font-mono">0 / 160 chars</span>
-                            </div>
-                            <textarea id="meta-desc" rows="3" placeholder="e.g., Learn how to optimize your content for Google search rankings using key SEO metrics and readability standards." oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Canonical URL</label>
-                                <input type="url" id="meta-url" placeholder="https://example.com/seo-guide" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Social Preview Image URL</label>
-                                <input type="url" id="meta-image" placeholder="https://example.com/og-image.jpg" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                            </div>
-                        </div>
-
-                        <!-- Generated Code Output -->
-                        <div class="mt-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-xs font-bold uppercase text-gray-500">Generated HTML Head Tags</label>
-                                <button onclick="copyMetaOutput()" class="text-xs bg-brand-600 hover:bg-brand-700 text-white px-3 py-1.5 rounded-lg transition"><i class="fa-regular fa-copy mr-1"></i> Copy HTML Code</button>
-                            </div>
-                            <pre id="meta-output" class="p-4 bg-gray-900 text-brand-400 font-mono text-xs rounded-xl overflow-x-auto whitespace-pre-wrap border border-gray-700"><code>&lt;!-- Generated HTML Meta Tags will appear here --&gt;</code></pre>
-                        </div>
-                    </div>
-
-                    <!-- Indexable Educational Documentation -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">Why Meta Tags and Open Graph Protocols Matter for Organic Search</h3>
-                        <p>Meta tags are snippets of text that describe a page's content; they do not appear on the page itself, but only in the page's code. Google and other search engine crawlers analyze meta title tags and meta descriptions to determine page relevance and display accurate snippets in Search Engine Results Pages (SERPs).</p>
-                        <p>Open Graph (OG) meta tags, originally introduced by Facebook, enable any web page to become a rich object in social graphs. When users share links on social platforms like LinkedIn, X (Twitter), or Facebook, OG tags control how images, titles, and descriptions are rendered, directly affecting social Click-Through Rates (CTR).</p>
-                    </div>
-                </section>
-
-                <!-- TOOL 2: KEYWORD DENSITY ANALYZER -->
-                <section id="tool-keyword-analyzer" class="tab-content hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Keyword Density & Frequency Analyzer</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Audit word frequency and detect potential keyword stuffing in real time.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-key text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Paste Content Text</label>
-                            <textarea id="kw-text" rows="6" placeholder="Paste your article draft or website copy here to analyze top terms and density percentages..." oninput="analyzeKeywords()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
-                        </div>
-
-                        <!-- Results Table -->
-                        <div>
-                            <h3 class="text-xs font-bold uppercase text-gray-500 mb-2">Top Keywords & Density Metrics</h3>
-                            <div class="overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl">
-                                <table class="w-full text-left text-xs text-gray-600 dark:text-gray-300">
-                                    <thead class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-200 dark:border-gray-600">
-                                        <tr>
-                                            <th class="p-3">Keyword</th>
-                                            <th class="p-3">Count</th>
-                                            <th class="p-3">Density (%)</th>
-                                            <th class="p-3">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="kw-results-body" class="divide-y divide-gray-200 dark:divide-gray-700">
-                                        <tr>
-                                            <td colspan="4" class="p-4 text-center text-gray-400">Paste text above to generate keyword metrics.</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Indexable Educational Documentation -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">Best Practices for Keyword Density in Modern Algorithms</h3>
-                        <p>Keyword density refers to the percentage of times a target keyword appears on a web page compared to the total word count. While early search algorithms relied heavily on exact-match frequency, modern search engines utilize Latent Semantic Indexing (LSI) and Natural Language Processing (NLP) models.</p>
-                        <p>Maintaining an optimal keyword density (typically between 1.0% and 2.5%) helps convey topical relevance without triggering spam algorithms for "keyword stuffing."</p>
-                    </div>
-                </section>
-
-                <!-- TOOL 3: READABILITY GRADE CALCULATOR -->
-                <section id="tool-readability-calculator" class="tab-content hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Readability & Flesch-Kincaid Calculator</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Evaluate text legibility, syllable counts, and target audience comprehension level.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-book-open text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Enter Article Copy</label>
-                            <textarea id="read-text" rows="6" placeholder="Paste text here to evaluate grade level, sentence structure, and Flesch reading ease scores..." oninput="calculateReadability()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
-                        </div>
-
-                        <!-- Readability Cards -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
-                                <span class="text-xs uppercase font-semibold text-gray-500 block">Flesch Reading Ease</span>
-                                <span id="flesch-score" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">0.0</span>
-                            </div>
-                            <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
-                                <span class="text-xs uppercase font-semibold text-gray-500 block">Grade Level</span>
-                                <span id="grade-level" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">N/A</span>
-                            </div>
-                            <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
-                                <span class="text-xs uppercase font-semibold text-gray-500 block">Total Sentences</span>
-                                <span id="sentence-count" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">0</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Indexable Educational Documentation -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">Understanding Readability Scores in Search Quality Rater Guidelines</h3>
-                        <p>Search engines prioritize web pages that deliver clear, accessible user experiences. The Flesch Reading Ease formula computes a score between 1 and 100 based on average sentence length and average syllables per word. Scores between 60 and 70 indicate plain English accessible to 8th and 9th graders.</p>
-                    </div>
-                </section>
-
-                <!-- TOOL 4: URL SLUG & HEADING STRUCTURE EXTRACTOR -->
-                <section id="tool-url-structure" class="tab-content hidden bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">URL Slug & Heading Structure Extractor</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Convert raw titles to clean permalink slugs and outline header hierarchies.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-link text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Article / Page Title</label>
-                            <input type="text" id="slug-input" placeholder="e.g., How to Setup Modern SEO Tools in 2026!" oninput="generateSlug()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Clean URL Slug</label>
-                            <div class="flex gap-2">
-                                <input type="text" id="slug-output" readonly class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-mono text-brand-600 dark:text-brand-400 outline-none">
-                                <button onclick="copySlugOutput()" class="px-4 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-semibold transition">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Indexable Educational Documentation -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <h3 class="text-sm font-bold text-gray-900 dark:text-white">SEO Permalink Best Practices</h3>
-                        <p>A URL slug is the user-friendly, human-readable part of a web address. Short, descriptive permalinks containing primary keywords improve site architecture clarity and allow search crawlers to contextualize page subjects efficiently.</p>
-                    </div>
-                </section>
-
-                <!-- AD SLOT 2: IN-CONTENT / MID-PAGE BANNER (COMPLETELY BLANK CONTAINER) -->
-                <div class="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 text-center ad-grid-pattern shadow-sm min-h-[120px] flex items-center justify-center overflow-hidden">
-                    <!-- Official AdSense Fluid/In-Article Ad Tag -->
-                    <ins class="adsbygoogle"
-                         style="display:block; width:100%;"
-                         data-ad-client="ca-pub-4321543724878495"
-                         data-ad-slot="1000000002"
-                         data-ad-format="fluid"
-                         data-ad-layout-key="-fb+5w+4e-db+86"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+        <!-- TOOL 1: SEO META & OPEN GRAPH GENERATOR -->
+        <section id="meta-generator" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">SEO Meta Tag & Open Graph Generator</h1>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Generate search-engine-optimized meta tags and social media card previews.</p>
                 </div>
-
-                <!-- PUBLISHER SECTION: ABOUT US -->
-                <section id="tool-about" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">About SEO Craft Studio</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Mission statement, editorial standards, and platform overview.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-circle-info text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Our Mission</h3>
-                        <p>
-                            SEO Craft Studio was established to empower content creators, digital marketers, bloggers, and copywriters with accessible, client-side web utilities. We believe technical content optimization tools should be freely available without requiring intrusive software downloads, mandatory sign-ups, or user tracking.
-                        </p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Client-Side Technical Architecture</h3>
-                        <p>
-                            All tools built into SEO Craft Studio operate locally inside your browser using standardized JavaScript engines. Text submitted into our keyword analyzers, readability calculators, and meta tag generators is processed in-memory and is never stored, logged, or transmitted across remote servers.
-                        </p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Publisher Disclosures & Monetization</h3>
-                        <p>
-                            To maintain free access to our utilities, SEO Craft Studio partners with reputable third-party advertising networks, including Google AdSense. Ads served across our platform help fund ongoing maintenance and server bandwidth.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- PUBLISHER SECTION: PRIVACY POLICY -->
-                <section id="tool-privacy" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Privacy Policy</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Comprehensive cookie disclosures, AdSense policy, and data handling.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-shield-halved text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">1. Information Collection</h3>
-                        <p>
-                            SEO Craft Studio does not collect personally identifiable information (PII) unless voluntarily provided through our support form. Standard log files capture basic non-identifying technical information such as browser type, IP address, operating system, and timestamp metrics.
-                        </p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">2. Google AdSense & Third-Party Cookies</h3>
-                        <p>
-                            Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to your sites and/or other sites on the Internet.
-                        </p>
-                        <p>
-                            Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 underline font-semibold">Google Ads Settings</a>. Alternatively, users can opt out of third-party vendor use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 underline font-semibold">www.aboutads.info</a>.
-                        </p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">3. CCPA & GDPR Rights</h3>
-                        <p>
-                            European Economic Area (EEA) and California residents maintain full rights regarding data privacy, access, and erasure under GDPR and CCPA regulations.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- PUBLISHER SECTION: TERMS OF SERVICE -->
-                <section id="tool-terms" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Terms of Service</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Rules of engagement, intellectual property, and disclaimers.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-file-contract text-xl"></i></span>
-                    </div>
-
-                    <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">1. Agreement to Terms</h3>
-                        <p>By accessing or using SEO Craft Studio, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access the service.</p>
-
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white">2. Disclaimer of Warranties</h3>
-                        <p>All utilities, metrics, and content optimization recommendations are provided on an "as is" and "as available" basis without warranties of any kind, express or implied.</p>
-                    </div>
-                </section>
-
-                <!-- PUBLISHER SECTION: CONTACT SUPPORT -->
-                <section id="tool-contact" class="tab-content hidden space-y-6 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
-                    <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contact & Support</h2>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Send inquiries, feedback, or technical assistance requests.</p>
-                        </div>
-                        <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-envelope text-xl"></i></span>
-                    </div>
-
-                    <!-- Interactive Form -->
-                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
-                        <div id="contact-success" class="hidden p-4 bg-brand-50 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-700 rounded-xl text-brand-800 dark:text-brand-200 text-sm">
-                            Thank you! Your inquiry has been transmitted successfully. Our team will respond within 24 business hours.
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Full Name</label>
-                            <input type="text" required placeholder="Jane Doe" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Email Address</label>
-                            <input type="email" required placeholder="jane@example.com" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Message</label>
-                            <textarea rows="4" required placeholder="How can we assist you with SEO Craft Studio?" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
-                        </div>
-                        <button type="submit" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm rounded-xl transition">Submit Message</button>
-                    </form>
-                </section>
-
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-tags text-xl"></i></span>
             </div>
 
-            <!-- SIDEBAR SECTION (4 COLUMNS) -->
-            <aside class="lg:col-span-4 space-y-6">
-                <div class="sticky top-20 space-y-6">
-
-                    <!-- AD SLOT 3: STICKY SIDEBAR BANNER (COMPLETELY BLANK CONTAINER) -->
-                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 text-center ad-grid-pattern shadow-sm min-h-[250px] flex items-center justify-center">
-                        <!-- Official AdSense Medium Rectangle Tag -->
-                        <ins class="adsbygoogle"
-                             style="display:block; width:100%; height:250px;"
-                             data-ad-client="ca-pub-4321543724878495"
-                             data-ad-slot="1000000003"
-                             data-ad-format="rectangle"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label class="block text-xs font-semibold uppercase text-gray-500">Page Title</label>
+                        <span id="title-count" class="text-xs text-gray-400 font-mono">0 / 60 chars</span>
                     </div>
-
-                    <!-- Sidebar Info Widget -->
-                    <div class="bg-gradient-to-br from-brand-600 to-brand-800 text-white rounded-2xl p-6 shadow-md">
-                        <i class="fa-solid fa-bolt text-3xl mb-3 text-brand-200"></i>
-                        <h3 class="text-lg font-bold">Client-Side Performance</h3>
-                        <p class="text-xs text-brand-100 mt-2 leading-relaxed">
-                            SEO Craft Studio runs instantly inside your web browser. No copy or analytical data is ever uploaded to external databases.
-                        </p>
-                    </div>
-
+                    <input type="text" id="meta-title" placeholder="e.g., Ultimate SEO Guide for Content Marketers in 2026" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
                 </div>
-            </aside>
 
-        </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label class="block text-xs font-semibold uppercase text-gray-500">Meta Description</label>
+                        <span id="desc-count" class="text-xs text-gray-400 font-mono">0 / 160 chars</span>
+                    </div>
+                    <textarea id="meta-desc" rows="3" placeholder="e.g., Learn how to optimize your content for Google search rankings using key SEO metrics and readability standards." oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Canonical URL</label>
+                        <input type="url" id="meta-url" placeholder="https://example.com/seo-guide" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Social Preview Image URL</label>
+                        <input type="url" id="meta-image" placeholder="https://example.com/og-image.jpg" oninput="updateMetaTags()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                </div>
+
+                <!-- Generated Code Output -->
+                <div class="mt-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-xs font-bold uppercase text-gray-500">Generated HTML Head Tags</label>
+                        <button onclick="copyMetaOutput()" class="text-xs bg-brand-600 hover:bg-brand-700 text-white px-3 py-1.5 rounded-lg transition"><i class="fa-regular fa-copy mr-1"></i> Copy HTML Code</button>
+                    </div>
+                    <pre id="meta-output" class="p-4 bg-gray-900 text-brand-400 font-mono text-xs rounded-xl overflow-x-auto whitespace-pre-wrap border border-gray-700"><code>&lt;!-- Generated HTML Meta Tags will appear here --&gt;</code></pre>
+                </div>
+            </div>
+
+            <!-- Indexable Educational Documentation -->
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <h3 class="text-sm font-bold text-gray-900 dark:text-white">Why Meta Tags and Open Graph Protocols Matter for Organic Search</h3>
+                <p>Meta tags provide search engine crawlers with essential metadata regarding page topics, ownership, and display guidelines. Title tags remain a direct ranking signal across major search algorithms, while descriptive meta snippets strongly influence user Click-Through Rates (CTR) on Search Engine Results Pages (SERPs).</p>
+                <p>Open Graph (OG) protocols optimize how links appear when shared across social media platforms like LinkedIn, Facebook, and X (Twitter), ensuring custom visual previews, accurate headings, and optimized snippet summaries.</p>
+            </div>
+        </section>
+
+        <!-- TOOL 2: KEYWORD DENSITY ANALYZER -->
+        <section id="keyword-analyzer" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Keyword Density & Frequency Analyzer</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Audit word frequency and detect potential keyword stuffing in real time.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-key text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Paste Content Text</label>
+                    <textarea id="kw-text" rows="6" placeholder="Paste your article draft or website copy here to analyze top terms and density percentages..." oninput="analyzeKeywords()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                </div>
+
+                <!-- Results Table -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase text-gray-500 mb-2">Top Keywords & Density Metrics</h3>
+                    <div class="overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl">
+                        <table class="w-full text-left text-xs text-gray-600 dark:text-gray-300">
+                            <thead class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold border-b border-gray-200 dark:border-gray-600">
+                                <tr>
+                                    <th class="p-3">Keyword</th>
+                                    <th class="p-3">Count</th>
+                                    <th class="p-3">Density (%)</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="kw-results-body" class="divide-y divide-gray-200 dark:divide-gray-700">
+                                <tr>
+                                    <td colspan="4" class="p-4 text-center text-gray-400">Paste text above to generate keyword metrics.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indexable Educational Documentation -->
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <h3 class="text-sm font-bold text-gray-900 dark:text-white">Best Practices for Keyword Density in Modern Algorithms</h3>
+                <p>Keyword density measures the proportion of targeted terms relative to total document word count. While search algorithms evaluate semantic concepts via Natural Language Processing (NLP), maintaining balanced keyword frequency (typically between 1.0% and 2.5%) ensures topical clarity without triggering spam penalties for unnatural repetition.</p>
+            </div>
+        </section>
+
+        <!-- TOOL 3: READABILITY GRADE CALCULATOR -->
+        <section id="readability-calculator" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Readability & Flesch-Kincaid Calculator</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Evaluate text legibility, syllable counts, and target audience comprehension level.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-book-open text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Enter Article Copy</label>
+                    <textarea id="read-text" rows="6" placeholder="Paste text here to evaluate grade level, sentence structure, and Flesch reading ease scores..." oninput="calculateReadability()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                </div>
+
+                <!-- Readability Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
+                        <span class="text-xs uppercase font-semibold text-gray-500 block">Flesch Reading Ease</span>
+                        <span id="flesch-score" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">0.0</span>
+                    </div>
+                    <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
+                        <span class="text-xs uppercase font-semibold text-gray-500 block">Grade Level</span>
+                        <span id="grade-level" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">N/A</span>
+                    </div>
+                    <div class="p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl text-center">
+                        <span class="text-xs uppercase font-semibold text-gray-500 block">Total Sentences</span>
+                        <span id="sentence-count" class="text-2xl font-extrabold text-brand-600 dark:text-brand-400 font-mono mt-1 block">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indexable Educational Documentation -->
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <h3 class="text-sm font-bold text-gray-900 dark:text-white">Understanding Readability Scores in Search Quality Guidelines</h3>
+                <p>Readable content improves user engagement, dwell time, and accessibility. The Flesch Reading Ease score evaluates sentence length and syllable count to rate text legibility on a scale from 1 to 100. Target scores between 60 and 70 ensure content remains clear and digestible for general digital audiences.</p>
+            </div>
+        </section>
+
+        <!-- TOOL 4: URL SLUG GENERATOR -->
+        <section id="url-structure" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">URL Slug Generator</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Convert raw titles to clean permalink slugs and outline header hierarchies.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-link text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Article / Page Title</label>
+                    <input type="text" id="slug-input" placeholder="e.g., How to Setup Modern SEO Tools in 2026!" oninput="generateSlug()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Clean URL Slug</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="slug-output" readonly class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-100 dark:bg-gray-900 text-sm font-mono text-brand-600 dark:text-brand-400 outline-none">
+                        <button onclick="copySlugOutput()" class="px-4 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-semibold transition">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indexable Educational Documentation -->
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-6 mt-8 space-y-4 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <h3 class="text-sm font-bold text-gray-900 dark:text-white">SEO Permalink Best Practices</h3>
+                <p>Clean, keyword-rich permalinks improve crawl efficiency and user trust. Removing special characters, punctuation, and unnecessary stop words creates concise URL slugs that clearly communicate page intent to search engine indices.</p>
+            </div>
+        </section>
+
+        <!-- PUBLISHER SECTION: ABOUT US -->
+        <section id="about" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">About SEO Craft Studio</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Platform overview and mission statement.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-circle-info text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">Our Mission</h3>
+                <p>SEO Craft Studio provides content creators, marketers, and web developers with free, client-side content optimization tools. We build utilities designed to streamline technical SEO workflows, readability analysis, and social metadata generation.</p>
+
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">Privacy & Technical Architecture</h3>
+                <p>All analysis and processing operations run entirely in-browser using standard JavaScript routines. Your text and data are never stored, logged, or transmitted to external web servers.</p>
+            </div>
+        </section>
+
+        <!-- PUBLISHER SECTION: PRIVACY POLICY -->
+        <section id="privacy" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Privacy Policy</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Data handling and user privacy disclosures.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-shield-halved text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">1. Information Collection</h3>
+                <p>SEO Craft Studio operates client-side tools and does not require account creation or personal details to use our utilities. Standard non-identifying server logs (such as IP addresses and browser types) may be recorded for basic operational security.</p>
+
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">2. Cookies & Local Storage</h3>
+                <p>We may use local browser storage strictly to remember interface preferences, such as your light/dark mode selection. We do not use persistent tracking cookies.</p>
+            </div>
+        </section>
+
+        <!-- PUBLISHER SECTION: TERMS OF SERVICE -->
+        <section id="terms" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Terms of Service</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Usage terms and platform disclaimers.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-file-contract text-xl"></i></span>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">1. Acceptable Use</h3>
+                <p>You are free to use SEO Craft Studio for personal, academic, or commercial content analysis. You agree not to perform automated abusive requests or attempt to disrupt service availability.</p>
+
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">2. Disclaimer of Warranties</h3>
+                <p>Our tools are provided "as is" without express or implied warranties. SEO metrics and readability scores serve as analytical estimates and do not guarantee search engine positioning.</p>
+            </div>
+        </section>
+
+        <!-- PUBLISHER SECTION: CONTACT SUPPORT -->
+        <section id="contact" class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Contact Support</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Get in touch with our engineering and content team.</p>
+                </div>
+                <span class="p-3 bg-brand-50 dark:bg-gray-700 text-brand-600 dark:text-brand-400 rounded-xl"><i class="fa-solid fa-envelope text-xl"></i></span>
+            </div>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4 max-w-2xl">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Your Name</label>
+                    <input type="text" required placeholder="John Doe" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Your Email Address</label>
+                    <input type="email" required placeholder="john@example.com" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-500 mb-1">Message</label>
+                    <textarea rows="4" required placeholder="How can we help you?" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-sm outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                </div>
+                <button type="submit" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-semibold transition">Send Message</button>
+                <div id="contact-success" class="hidden text-xs text-brand-600 font-semibold mt-2">Thank you! Your message has been recorded.</div>
+            </form>
+        </section>
+
     </main>
 
-    <!-- FOOTER WITH PUBLISHER COMPLIANCE LINKS -->
+    <!-- FOOTER -->
     <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -482,11 +372,14 @@
                     <span class="font-bold text-gray-900 dark:text-white">SEO Craft Studio</span>
                     <span class="text-xs text-gray-500 dark:text-gray-400">© 2026. All Rights Reserved.</span>
                 </div>
-                <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
-                    <a href="#" onclick="switchTab('about')" class="hover:underline">About Us</a>
-                    <a href="#" onclick="switchTab('privacy')" class="hover:underline">Privacy Policy</a>
-                    <a href="#" onclick="switchTab('terms')" class="hover:underline">Terms of Service</a>
-                    <a href="#" onclick="switchTab('contact')" class="hover:underline">Contact Support</a>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-gray-600 dark:text-gray-300">
+                    <a href="#about" class="hover:underline">About Us</a>
+                    <span>•</span>
+                    <a href="#privacy" class="hover:underline">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#terms" class="hover:underline">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#contact" class="hover:underline">Contact Support</a>
                 </div>
             </div>
         </div>
@@ -494,154 +387,120 @@
 
     <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
-        // Navigation & Tab Switcher
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            const target = document.getElementById('tool-' + tabId);
-            if (target) target.classList.remove('hidden');
-
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-brand-600', 'dark:text-brand-400', 'bg-brand-50', 'dark:bg-gray-700');
-                btn.classList.add('text-gray-600', 'dark:text-gray-300');
-            });
-
-            const activeBtn = document.getElementById('nav-' + tabId);
-            if (activeBtn) {
-                activeBtn.classList.add('text-brand-600', 'dark:text-brand-400', 'bg-brand-50', 'dark:bg-gray-700');
-                activeBtn.classList.remove('text-gray-600', 'dark:text-gray-300');
-            }
-
-            // Close mobile dropdown menu if open
-            document.getElementById('mobile-menu').classList.add('hidden');
-        }
-
-        // Dark/Light Theme Toggle
         function toggleDarkMode() {
-            const html = document.documentElement;
-            html.classList.toggle('dark');
+            document.documentElement.classList.toggle('dark');
             const icon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            icon.className = document.documentElement.classList.contains('dark') ? 'fa-solid fa-sun text-lg' : 'fa-solid fa-moon text-lg';
         }
 
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // TOOL 1: Meta Tag Generator Logic
         function updateMetaTags() {
-            const title = document.getElementById('meta-title').value.trim();
-            const desc = document.getElementById('meta-desc').value.trim();
-            const url = document.getElementById('meta-url').value.trim() || 'https://example.com/page';
-            const img = document.getElementById('meta-image').value.trim() || 'https://example.com/og-image.jpg';
+            const title = document.getElementById('meta-title').value;
+            const desc = document.getElementById('meta-desc').value;
+            const url = document.getElementById('meta-url').value;
+            const image = document.getElementById('meta-image').value;
 
             document.getElementById('title-count').innerText = `${title.length} / 60 chars`;
             document.getElementById('desc-count').innerText = `${desc.length} / 160 chars`;
 
-            const htmlOutput = `<!-- Primary Meta Tags -->
+            const code = `<!-- Primary Meta Tags -->
 <title>${title || 'Your Page Title'}</title>
 <meta name="title" content="${title || 'Your Page Title'}">
-<meta name="description" content="${desc || 'Your page description content...'}">
-<link rel="canonical" href="${url}">
+<meta name="description" content="${desc || 'Your Page Description'}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="${url}">
+<meta property="og:url" content="${url || 'https://example.com'}">
 <meta property="og:title" content="${title || 'Your Page Title'}">
-<meta property="og:description" content="${desc || 'Your page description content...'}">
-<meta property="og:image" content="${img}">
+<meta property="og:description" content="${desc || 'Your Page Description'}">
+<meta property="og:image" content="${image || 'https://example.com/image.jpg'}">
 
 <!-- Twitter Card -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="${url}">
+<meta property="twitter:url" content="${url || 'https://example.com'}">
 <meta property="twitter:title" content="${title || 'Your Page Title'}">
-<meta property="twitter:description" content="${desc || 'Your page description content...'}">
-<meta property="twitter:image" content="${img}">`;
+<meta property="twitter:description" content="${desc || 'Your Page Description'}">
+<meta property="twitter:image" content="${image || 'https://example.com/image.jpg'}">`;
 
-            document.getElementById('meta-output').innerText = htmlOutput;
+            document.getElementById('meta-output').innerText = code;
         }
 
         function copyMetaOutput() {
             const text = document.getElementById('meta-output').innerText;
             navigator.clipboard.writeText(text);
+            alert('Meta tags copied to clipboard!');
         }
 
-        // TOOL 2: Keyword Density Logic
         function analyzeKeywords() {
             const text = document.getElementById('kw-text').value.toLowerCase();
-            const words = text.match(/\b[a-z0-9']+\b/g) || [];
+            const words = text.match(/\b[a-z]{3,}\b/g) || [];
             const totalWords = words.length;
-            const tbody = document.getElementById('kw-results-body');
 
             if (totalWords === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-400">Paste text above to generate keyword metrics.</td></tr>';
+                document.getElementById('kw-results-body').innerHTML = `<tr><td colspan="4" class="p-4 text-center text-gray-400">Paste text above to generate keyword metrics.</td></tr>`;
                 return;
             }
 
-            const stopWords = new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what"]);
+            const stopWords = new Set(['the', 'and', 'for', 'that', 'this', 'with', 'you', 'are', 'was', 'have', 'from', 'not']);
             const counts = {};
 
             words.forEach(w => {
-                if (!stopWords.has(w) && w.length > 2) {
+                if (!stopWords.has(w)) {
                     counts[w] = (counts[w] || 0) + 1;
                 }
             });
 
             const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5);
 
-            if (sorted.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-400">No significant keywords detected.</td></tr>';
-                return;
-            }
-
-            tbody.innerHTML = sorted.map(([word, count]) => {
+            let html = '';
+            sorted.forEach(([word, count]) => {
                 const density = ((count / totalWords) * 100).toFixed(2);
-                let status = '<span class="text-brand-600 font-semibold">Optimal</span>';
-                if (density > 3.0) status = '<span class="text-amber-600 font-semibold">High Density</span>';
-                return `<tr>
-                    <td class="p-3 font-mono text-gray-900 dark:text-white">${word}</td>
+                let status = '<span class="text-emerald-500 font-semibold">Optimal</span>';
+                if (density > 3.0) {
+                    status = '<span class="text-rose-500 font-semibold">High (Stuffing Risk)</span>';
+                }
+                html += `<tr>
+                    <td class="p-3 font-medium">${word}</td>
                     <td class="p-3 font-mono">${count}</td>
                     <td class="p-3 font-mono">${density}%</td>
                     <td class="p-3">${status}</td>
                 </tr>`;
-            }).join('');
+            });
+
+            document.getElementById('kw-results-body').innerHTML = html || `<tr><td colspan="4" class="p-4 text-center text-gray-400">No significant keywords found.</td></tr>`;
         }
 
-        // TOOL 3: Readability Score Logic
         function calculateReadability() {
-            const text = document.getElementById('read-text').value.trim();
-            if (!text) {
-                document.getElementById('flesch-score').innerText = "0.0";
-                document.getElementById('grade-level').innerText = "N/A";
-                document.getElementById('sentence-count').innerText = "0";
+            const text = document.getElementById('read-text').value;
+            const sentences = (text.match(/[.!?]+/g) || []).length || (text.trim().length > 0 ? 1 : 0);
+            const words = (text.match(/\b\w+\b/g) || []).length;
+            const syllables = (text.match(/[aeiouy]{1,2}/gi) || []).length;
+
+            document.getElementById('sentence-count').innerText = sentences;
+
+            if (words === 0 || sentences === 0) {
+                document.getElementById('flesch-score').innerText = '0.0';
+                document.getElementById('grade-level').innerText = 'N/A';
                 return;
             }
 
-            const sentences = text.split(/[.!?]+/).filter(Boolean).length || 1;
-            const words = text.match(/\b\w+\b/g) || [];
-            const wordCount = words.length || 1;
+            const flesch = 206.835 - (1.015 * (words / sentences)) - (84.6 * (syllables / words));
+            const score = Math.max(0, Math.min(100, flesch)).toFixed(1);
+            document.getElementById('flesch-score').innerText = score;
 
-            let syllables = 0;
-            words.forEach(word => {
-                const w = word.toLowerCase();
-                const matches = w.match(/[aeiouy]{1,2}/g);
-                syllables += matches ? matches.length : 1;
-            });
+            let grade = 'College';
+            if (score >= 90) grade = '5th Grade';
+            else if (score >= 80) grade = '6th Grade';
+            else if (score >= 70) grade = '7th Grade';
+            else if (score >= 60) grade = '8th & 9th Grade';
+            else if (score >= 50) grade = 'High School';
 
-            const flesch = 206.835 - (1.015 * (wordCount / sentences)) - (84.6 * (syllables / wordCount));
-            const grade = (0.39 * (wordCount / sentences)) + (11.8 * (syllables / wordCount)) - 15.59;
-
-            document.getElementById('flesch-score').innerText = Math.max(0, flesch).toFixed(1);
-            document.getElementById('grade-level').innerText = grade > 0 ? `Grade ${Math.round(grade)}` : 'Elementary';
-            document.getElementById('sentence-count').innerText = sentences;
+            document.getElementById('grade-level').innerText = grade;
         }
 
-        // TOOL 4: URL Slug Generator Logic
         function generateSlug() {
             const input = document.getElementById('slug-input').value;
             const slug = input.toLowerCase()
@@ -654,20 +513,20 @@
 
         function copySlugOutput() {
             const slug = document.getElementById('slug-output').value;
-            navigator.clipboard.writeText(slug);
+            if (slug) {
+                navigator.clipboard.writeText(slug);
+                alert('Slug copied to clipboard!');
+            }
         }
 
-        // Contact Form Submission
         function handleContactSubmit(e) {
             e.preventDefault();
             document.getElementById('contact-success').classList.remove('hidden');
             e.target.reset();
         }
 
-        // Initialize default state on page load
-        window.onload = function() {
-            updateMetaTags();
-        };
+        // Initialize Meta Output
+        updateMetaTags();
     </script>
 </body>
 </html>
